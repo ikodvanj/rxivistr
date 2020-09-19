@@ -16,7 +16,7 @@ coverage](https://codecov.io/gh/ikodvanj/rxivistr/branch/master/graph/badge.svg)
 Rxivist is developed and maintained by the Blekhman Lab at the
 University of Minnesota. It indexes articles from bioRxiv, a free
 preprint server by Cold Spring Harbor Laboratory. This package is a
-client for rxivist API and can be used to access metadata from:
+client for rxivist API and can be used to access:
 
   - Metadata on articles published on biorxiv, indexed in rxivist
   - Information about authors of the aforementioned articles
