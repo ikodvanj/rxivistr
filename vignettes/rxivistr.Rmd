@@ -1,0 +1,119 @@
+---
+title: "rxivistr"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{rxivistr}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Rxivist indexes articles from bioRxiv, a free preprint server by Cold Spring Harbor Laboratory. This package is a client for rxivist API and can be used to access metadata from:
+
+  * Metadata on articles published on biorxiv, indexed in rxivist
+  * Information about authors of the aforementioned articles
+  * Usage statistics (e.g. number of downloads for specific paper)
+
+## Installation 
+
+To install rxivistr package, run:
+
+```
+devtools::install_github("ikodvanj/rxivstr")
+```
+
+## Using rxivstr
+
+Load the package using `library()` function.
+
+```{r}
+library(rxivistr)
+```
+
+Package contains following functions:
+
+  * `rxivist_search` - retrieves articles with the matching description
+  * `article_details` - retrieves data about a single paper and all of its authors
+  * `article_downloads` - retrieves monthly download statistics for articles.
+  * `authors_rank` - retrieves top 200 authors in the specified category.
+  * `author` - provides information about the specified author.
+  * `category_list` - retrieves a list of all categories
+  * `rxivist_stats` - retrieves basic statistics about the number of articles indexed by rxivist.
+
+In the following text, examples are provided for each function.
+
+### rxivist_search
+
+Following function retrieves articles top 100 most downloaded articles related to COVID-19:
+
+```{r}
+res <- rxivist_search(search_phrase = "COVID-19", from = "alltime", sortby = "downloads", limit = 100)
+dplyr::glimpse(res)
+```
+
+### article_details
+
+At the time of writing this vignette, the most downloaded article had an id 72514. With the following function we will retrieve information about this article:
+
+```{r}
+res <- article_details(72514)
+dplyr::glimpse(res)
+```
+
+### article_downloads
+
+To investigate the number of downloads, `article_downloads` function can be used:
+
+```{r}
+article_downloads(72514)
+```
+
+
+### authors_rank
+
+To retrieve top 200 authors based on the number of article downloads, authors_rank can be used:
+
+```{r}
+res <- authors_rank()
+dplyr::glimpse(res)
+```
+
+
+### author
+
+With function author, we can retrieve more information about specific author. 
+
+```{r}
+author(295517)
+```
+
+
+### category_list
+
+This function returns a list of all categories to which articles are classified:
+
+```{r}
+category_list()
+```
+
+
+### rxivist_stats
+
+Returns information about the number of articles index in rxivist.
+
+```{r}
+res <- rxivist_stats()
+dplyr::glimpse(res)
+```
+
+
+
+
+
+

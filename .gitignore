@@ -1,0 +1,11 @@
+inst/doc
+.Rproj.user
+.Rhistory
+.RData
+.Rapp.history
+.Ruserdata
+.Renviron
+**/.DS_Store
+*_cache/
+/cache/
+pkgdown/
