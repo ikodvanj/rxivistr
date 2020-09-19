@@ -1,8 +1,6 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-## rxivistr
-
 <!-- badges: start -->
 
 [![Travis build
@@ -13,13 +11,24 @@ status](https://ci.appveyor.com/api/projects/status/github/ikodvanj/rxivistr?bra
 coverage](https://codecov.io/gh/ikodvanj/rxivistr/branch/master/graph/badge.svg)](https://codecov.io/gh/ikodvanj/rxivistr?branch=master)
 <!-- badges: end -->
 
-Rxivist indexes articles from bioRxiv, a free preprint server by Cold
-Spring Harbor Laboratory. This package is a client for rxivist API and
-can be used to access metadata from:
+## rxivistr
+
+Rxivist is developed and maintained by the Blekhman Lab at the
+University of Minnesota. It indexes articles from bioRxiv, a free
+preprint server by Cold Spring Harbor Laboratory. This package is a
+client for rxivist API and can be used to access metadata from:
 
   - Metadata on articles published on biorxiv, indexed in rxivist
   - Information about authors of the aforementioned articles
   - Usage statistics (e.g. number of downloads for specific paper)
+
+For more information about the Rxivist project, please visit Rxivist
+webiste (<https://rxivist.org/>) or read the following articles:
+
+  - Tracking the popularity and outcomes of all bioRxiv preprints.
+    eLife. doi: 10.7554/eLife.45133.
+  - Rxivist.org: Sorting biology preprints using social media and
+    readership metrics. PLOS Biology. doi: 10.1371/journal.pbio.3000269.
 
 ## Installation
 
