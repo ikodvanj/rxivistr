@@ -5,16 +5,17 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tool for the rxivist API • rxivistr</title>
+<title>Tool for the Rxivist API • rxivistr</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Tool for the rxivist API">
-<meta property="og:description" content="R client for accessing rxivist API. Rxivist indexes articles from bioRxiv, 
+<script src="pkgdown.js"></script><meta property="og:title" content="Tool for the Rxivist API">
+<meta property="og:description" content="R client for accessing Rxivist API. Rxivist indexes articles from bioRxiv, 
   a free online archive for unpublished preprints in biology and life sciences, 
-  by Cold Spring Harbor Laboratory. ">
+  by Cold Spring Harbor Laboratory. With this tool information about articles and
+  authors can be accessed. ">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -33,7 +34,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">rxivistr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
       </span>
     </div>
 
@@ -50,6 +51,9 @@
 </li>
 <li>
   <a href="reference/index.html">Reference</a>
+</li>
+<li>
+  <a href="news/index.html">Changelog</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -72,27 +76,31 @@
       </header><div class="row">
   <div class="contents col-md-9">
 
+
 <div id="rxivistr" class="section level2">
 <h2 class="hasAnchor">
 <a href="#rxivistr" class="anchor"></a>rxivistr</h2>
-<!-- badges: start -->
-
-<p>Rxivist indexes articles from bioRxiv, a free preprint server by Cold Spring Harbor Laboratory. This package is a client for rxivist API and can be used to access metadata from:</p>
+<p>Rxivist is developed and maintained by the Blekhman Lab at the University of Minnesota. It indexes articles from bioRxiv, a free preprint server by Cold Spring Harbor Laboratory. This package is a client for Rxivist API and can be used to access:</p>
 <ul>
-<li>Metadata on articles published on biorxiv, indexed in rxivist</li>
+<li>Metadata on articles published on biorxiv, indexed in the Rxivist</li>
 <li>Information about authors of the aforementioned articles</li>
 <li>Usage statistics (e.g. number of downloads for specific paper)</li>
+</ul>
+<p>Rxivist project is independent of biorxiv. For more information about Rxivist, please visit Rxivist website (<a href="https://rxivist.org/" class="uri">https://rxivist.org/</a>) or read the following articles:</p>
+<ul>
+<li>Tracking the popularity and outcomes of all bioRxiv preprints. eLife. doi: 10.7554/eLife.45133.</li>
+<li>Rxivist.org: Sorting biology preprints using social media and readership metrics. PLOS Biology. doi: 10.1371/journal.pbio.3000269.</li>
 </ul>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>To install rxivistr package, run:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"ikodvanj/rxivstr"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"ikodvanj/rxivistr"</span>)</a></code></pre></div>
 </div>
-<div id="using-rxivstr" class="section level2">
+<div id="using-rxivistr" class="section level2">
 <h2 class="hasAnchor">
-<a href="#using-rxivstr" class="anchor"></a>Using rxivstr</h2>
+<a href="#using-rxivistr" class="anchor"></a>Using rxivistr</h2>
 <p>Load the package using <code>library()</code> function.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(rxivistr)</a></code></pre></div>
 <p>Use one of the following functions:</p>
@@ -110,9 +118,9 @@
 <li>
 <code>category_list</code> - retrieves a list of all categories</li>
 <li>
-<code>rxivist_stats</code> - retrieves basic statistics about the number of articles indexed by rxivist.</li>
+<code>rxivist_stats</code> - retrieves basic statistics about the number of articles indexed by the Rxivist.</li>
 </ul>
-<p>The use of this package is explained in detail in the vignette.</p>
+<p>The use of this package is explained in detail in the vignette and the Rxivist API documentation can be found at <a href="https://rxivist.org/docs" class="uri">https://rxivist.org/docs</a>.</p>
 </div>
 
   </div>

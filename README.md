@@ -16,14 +16,15 @@ coverage](https://codecov.io/gh/ikodvanj/rxivistr/branch/master/graph/badge.svg)
 Rxivist is developed and maintained by the Blekhman Lab at the
 University of Minnesota. It indexes articles from bioRxiv, a free
 preprint server by Cold Spring Harbor Laboratory. This package is a
-client for rxivist API and can be used to access:
+client for Rxivist API and can be used to access:
 
-  - Metadata on articles published on biorxiv, indexed in rxivist
+  - Metadata on articles published on biorxiv, indexed in the Rxivist
   - Information about authors of the aforementioned articles
   - Usage statistics (e.g. number of downloads for specific paper)
 
-For more information about the Rxivist project, please visit Rxivist
-webiste (<https://rxivist.org/>) or read the following articles:
+Rxivist project is independent of biorxiv. For more information about
+Rxivist, please visit Rxivist website (<https://rxivist.org/>) or read
+the following articles:
 
   - Tracking the popularity and outcomes of all bioRxiv preprints.
     eLife. doi: 10.7554/eLife.45133.
@@ -34,9 +35,9 @@ webiste (<https://rxivist.org/>) or read the following articles:
 
 To install rxivistr package, run:
 
-    devtools::install_github("ikodvanj/rxivstr")
+    devtools::install_github("ikodvanj/rxivistr")
 
-## Using rxivstr
+## Using rxivistr
 
 Load the package using `library()` function.
 
@@ -54,6 +55,7 @@ Use one of the following functions:
   - `author` - provides information about the specified author.
   - `category_list` - retrieves a list of all categories
   - `rxivist_stats` - retrieves basic statistics about the number of
-    articles indexed by rxivist.
+    articles indexed by the Rxivist.
 
-The use of this package is explained in detail in the vignette.
+The use of this package is explained in detail in the vignette and the
+Rxivist API documentation can be found at <https://rxivist.org/docs>.

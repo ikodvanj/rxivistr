@@ -2,7 +2,7 @@
 % Please edit documentation in R/rxivistr.R
 \name{authors_rank}
 \alias{authors_rank}
-\title{authors_rank}
+\title{Authors ranks}
 \usage{
 authors_rank(category = "")
 }

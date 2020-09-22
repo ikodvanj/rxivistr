@@ -2,7 +2,7 @@
 % Please edit documentation in R/rxivistr.R
 \name{article_details}
 \alias{article_details}
-\title{article_details}
+\title{Article details}
 \usage{
 article_details(ID)
 }

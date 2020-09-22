@@ -2,7 +2,7 @@
 % Please edit documentation in R/rxivistr.R
 \name{rxivist_stats}
 \alias{rxivist_stats}
-\title{rxivist_stats}
+\title{rxivist stats}
 \usage{
 rxivist_stats()
 }

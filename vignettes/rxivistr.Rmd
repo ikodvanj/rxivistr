@@ -14,9 +14,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-Rxivist indexes articles from bioRxiv, a free preprint server by Cold Spring Harbor Laboratory. This package is a client for rxivist API and can be used to access metadata from:
+Rxivist indexes articles from bioRxiv, a free preprint server by Cold Spring Harbor Laboratory. This package is a client for the Rxivist API and can be used to access metadata from:
 
-  * Metadata on articles published on biorxiv, indexed in rxivist
+  * Metadata on articles published on biorxiv, indexed in the Rxivist
   * Information about authors of the aforementioned articles
   * Usage statistics (e.g. number of downloads for specific paper)
 
@@ -25,10 +25,10 @@ Rxivist indexes articles from bioRxiv, a free preprint server by Cold Spring Har
 To install rxivistr package, run:
 
 ```
-devtools::install_github("ikodvanj/rxivstr")
+devtools::install_github("ikodvanj/rxivistr")
 ```
 
-## Using rxivstr
+## Using rxivistr
 
 Load the package using `library()` function.
 
@@ -44,16 +44,16 @@ Package contains following functions:
   * `authors_rank` - retrieves top 200 authors in the specified category.
   * `author` - provides information about the specified author.
   * `category_list` - retrieves a list of all categories
-  * `rxivist_stats` - retrieves basic statistics about the number of articles indexed by rxivist.
+  * `rxivist_stats` - retrieves basic statistics about the number of articles indexed by the Rxivist.
 
 In the following text, examples are provided for each function.
 
 ### rxivist_search
 
-Following function retrieves articles top 100 most downloaded articles related to COVID-19:
+Following function retrieves articles top 5 most downloaded articles related to COVID-19:
 
 ```{r}
-res <- rxivist_search(search_phrase = "COVID-19", from = "alltime", sortby = "downloads", limit = 100)
+res <- rxivist_search(search_phrase = "COVID-19", from = "alltime", sortby = "downloads", limit = 5)
 dplyr::glimpse(res)
 ```
 
@@ -105,7 +105,7 @@ category_list()
 
 ### rxivist_stats
 
-Returns information about the number of articles index in rxivist.
+Returns information about the number of articles indexed by the Rxivist.
 
 ```{r}
 res <- rxivist_stats()

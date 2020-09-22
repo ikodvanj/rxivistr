@@ -1,5 +1,5 @@
 #' @title Search Rxivist
-#' @description Retrieves a articles with matching description
+#' @description Retrieves a articles with matching description.
 #'
 #' @param search_phrase Search phrase used for finding articles. Can be left empty.
 #' @param from Defines what timeframe to search. Can be alltime, ytd, lastmonth, day, week, month, year. Lastmonth and ytd can only be used with sortby set as downloads
@@ -25,16 +25,20 @@ rxivist_search <- function(search_phrase = "", from = "alltime", category = "", 
   ## check arguments
   check_args(from, category, sortby)
 
-  url <- paste0("https://api.rxivist.org/v1/papers?q=", search_phrase, "&timeframe=", from, "&sortby=", sortby,
-                "&page_size=", limit, paste0("&category=", category))
+  search_phrase <- gsub(" ", "+", search_phrase)
+
+  url <- paste0("https://api.rxivist.org/v1/papers?q=", search_phrase, "&metric=", sortby, paste0("&category=", category),
+  "&timeframe=", from, "&page_size=", limit)
+
   fetch <- GET(url)
   results <- fromJSON(rawToChar(fetch$content))[["results"]]
+
   return(results)
 }
 
 
 
-#' @title Category_list
+#' @title Category list
 #' @description Lists all categories
 #'
 #' @return Returns a list with all article categories.
@@ -54,7 +58,7 @@ category_list <- function(){
 }
 
 
-#' @title rxivist_stats
+#' @title rxivist stats
 #' @description Returns statistics on number of articles indexed by rxivist.
 #'
 #' @return Returns a list with rxivist stats.
@@ -74,7 +78,7 @@ rxivist_stats <- function(){
 }
 
 
-#' @title article_details
+#' @title Article details
 #' @description Retrieves data about a single paper and all of its authors
 #'
 #' @param ID Rxivist paper ID.
@@ -106,7 +110,7 @@ article_details <- function(ID) {
 
 
 
-#' @title article_downloads
+#' @title Article downloads
 #' @description Returns monthly download statistics for articles.
 #'
 #' @param ID Rxivist paper ID.
@@ -138,7 +142,7 @@ article_downloads <- function(ID) {
 
 
 
-#' @title authors_rank
+#' @title Authors ranks
 #' @description Returns top 200 authors in specified category.
 #'
 #' @param category Filters out results not related to the specified category. Category list can be viewed with category_list function. If filtering for a single category, this category can be specified as a string. If filtering for multiple categories, the argument must be specified as a vector, e.g. category = c("zoology","biophysics"). If it is left as default, the function will return top 200 authors overall.
@@ -170,7 +174,7 @@ authors_rank <- function(category = ""){
 }
 
 
-#' @title author
+#' @title Author
 #' @description Provides information about the specified author.
 #'
 #' @param ID Rxivist author ID.
