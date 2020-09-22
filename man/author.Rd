@@ -2,7 +2,7 @@
 % Please edit documentation in R/rxivistr.R
 \name{author}
 \alias{author}
-\title{author}
+\title{Author}
 \usage{
 author(ID)
 }

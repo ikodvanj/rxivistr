@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rxivistr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
       </span>
     </div>
 
@@ -48,6 +48,9 @@
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -80,9 +83,9 @@
 
     
     
-<p>Rxivist indexes articles from bioRxiv, a free preprint server by Cold Spring Harbor Laboratory. This package is a client for rxivist API and can be used to access metadata from:</p>
+<p>Rxivist indexes articles from bioRxiv, a free preprint server by Cold Spring Harbor Laboratory. This package is a client for the Rxivist API and can be used to access metadata from:</p>
 <ul>
-<li>Metadata on articles published on biorxiv, indexed in rxivist</li>
+<li>Metadata on articles published on biorxiv, indexed in the Rxivist</li>
 <li>Information about authors of the aforementioned articles</li>
 <li>Usage statistics (e.g. number of downloads for specific paper)</li>
 </ul>
@@ -112,27 +115,27 @@
 <li>
 <code>category_list</code> - retrieves a list of all categories</li>
 <li>
-<code>rxivist_stats</code> - retrieves basic statistics about the number of articles indexed by rxivist.</li>
+<code>rxivist_stats</code> - retrieves basic statistics about the number of articles indexed by the Rxivist.</li>
 </ul>
 <p>In the following text, examples are provided for each function.</p>
 <div id="rxivist_search" class="section level3">
 <h3 class="hasAnchor">
 <a href="#rxivist_search" class="anchor"></a>rxivist_search</h3>
-<p>Following function retrieves articles top 100 most downloaded articles related to COVID-19:</p>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="no">res</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/rxivist_search.html">rxivist_search</a></span>(<span class="kw">search_phrase</span> <span class="kw">=</span> <span class="st">"COVID-19"</span>, <span class="kw">from</span> <span class="kw">=</span> <span class="st">"alltime"</span>, <span class="kw">sortby</span> <span class="kw">=</span> <span class="st">"downloads"</span>, <span class="kw">limit</span> <span class="kw">=</span> <span class="fl">100</span>)
+<p>Following function retrieves articles top 5 most downloaded articles related to COVID-19:</p>
+<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="no">res</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/rxivist_search.html">rxivist_search</a></span>(<span class="kw">search_phrase</span> <span class="kw">=</span> <span class="st">"COVID-19"</span>, <span class="kw">from</span> <span class="kw">=</span> <span class="st">"alltime"</span>, <span class="kw">sortby</span> <span class="kw">=</span> <span class="st">"downloads"</span>, <span class="kw">limit</span> <span class="kw">=</span> <span class="fl">5</span>)
 <span class="kw pkg">dplyr</span><span class="kw ns">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/reexports.html">glimpse</a></span>(<span class="no">res</span>)
-<span class="co">#&gt; Rows: 100</span>
+<span class="co">#&gt; Rows: 5</span>
 <span class="co">#&gt; Columns: 10</span>
-<span class="co">#&gt; $ id           &lt;int&gt; 72514, 71702, 52089, 72040, 55953, 28608, 71805, 19809, …</span>
-<span class="co">#&gt; $ metric       &lt;int&gt; 9806, 3947, 3175, 3158, 2374, 2070, 2002, 1843, 1416, 13…</span>
-<span class="co">#&gt; $ title        &lt;chr&gt; "Uncanny similarity of unique inserts in the 2019-nCoV s…</span>
-<span class="co">#&gt; $ url          &lt;chr&gt; "https://api.rxivist.org/v1/papers/72514", "https://api.…</span>
-<span class="co">#&gt; $ biorxiv_url  &lt;chr&gt; "https://www.biorxiv.org/content/10.1101/2020.01.30.9278…</span>
-<span class="co">#&gt; $ doi          &lt;chr&gt; "10.1101/2020.01.30.927871", "10.1101/2020.01.22.914952"…</span>
-<span class="co">#&gt; $ category     &lt;chr&gt; "evolutionary-biology", "microbiology", "neuroscience", …</span>
-<span class="co">#&gt; $ first_posted &lt;chr&gt; "2020-01-31", "2020-01-23", "2019-05-31", "2020-01-26", …</span>
-<span class="co">#&gt; $ abstract     &lt;chr&gt; "This paper has been withdrawn by its authors. They inte…</span>
-<span class="co">#&gt; $ authors      &lt;list&gt; [&lt;data.frame[9 x 2]&gt;, &lt;data.frame[29 x 2]&gt;, &lt;data.frame…</span></pre></body></html></div>
+<span class="co">#&gt; $ id           &lt;int&gt; 81793, 77469, 76533, 78358, 83296</span>
+<span class="co">#&gt; $ metric       &lt;int&gt; 219628, 164766, 102134, 98929, 86680</span>
+<span class="co">#&gt; $ title        &lt;chr&gt; "Spike mutation pipeline reveals the emergence of a more…</span>
+<span class="co">#&gt; $ url          &lt;chr&gt; "https://api.rxivist.org/v1/papers/81793", "https://api.…</span>
+<span class="co">#&gt; $ biorxiv_url  &lt;chr&gt; "https://www.biorxiv.org/content/10.1101/2020.04.29.0690…</span>
+<span class="co">#&gt; $ doi          &lt;chr&gt; "10.1101/2020.04.29.069054", "10.1101/2020.03.22.002386"…</span>
+<span class="co">#&gt; $ category     &lt;chr&gt; "evolutionary-biology", "systems-biology", "microbiology…</span>
+<span class="co">#&gt; $ first_posted &lt;chr&gt; "2020-04-30", "2020-03-22", "2020-03-12", "2020-03-31", …</span>
+<span class="co">#&gt; $ abstract     &lt;chr&gt; "We have developed an analysis pipeline to facilitate re…</span>
+<span class="co">#&gt; $ authors      &lt;list&gt; [&lt;data.frame[17 x 2]&gt;, &lt;data.frame[100 x 2]&gt;, &lt;data.fra…</span></pre></body></html></div>
 </div>
 <div id="article_details" class="section level3">
 <h3 class="hasAnchor">
@@ -308,7 +311,7 @@
 <div id="rxivist_stats" class="section level3">
 <h3 class="hasAnchor">
 <a href="#rxivist_stats" class="anchor"></a>rxivist_stats</h3>
-<p>Returns information about the number of articles index in rxivist.</p>
+<p>Returns information about the number of articles indexed by the Rxivist.</p>
 <div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="no">res</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/rxivist_stats.html">rxivist_stats</a></span>()
 <span class="kw pkg">dplyr</span><span class="kw ns">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/reexports.html">glimpse</a></span>(<span class="no">res</span>)
 <span class="co">#&gt; List of 8</span>
@@ -317,34 +320,34 @@
 <span class="co">#&gt;  $ missing_abstract : int 1</span>
 <span class="co">#&gt;  $ missing_date     : int 0</span>
 <span class="co">#&gt;  $ outdated_count   :List of 28</span>
-<span class="co">#&gt;   ..$ animal-behavior-and-cognition         : int 1134</span>
-<span class="co">#&gt;   ..$ biochemistry                          : int 2275</span>
-<span class="co">#&gt;   ..$ bioengineering                        : int 1553</span>
-<span class="co">#&gt;   ..$ bioinformatics                        : int 5505</span>
-<span class="co">#&gt;   ..$ biophysics                            : int 2581</span>
-<span class="co">#&gt;   ..$ cancer-biology                        : int 2436</span>
-<span class="co">#&gt;   ..$ cell-biology                          : int 2712</span>
+<span class="co">#&gt;   ..$ animal-behavior-and-cognition         : int 1236</span>
+<span class="co">#&gt;   ..$ biochemistry                          : int 2626</span>
+<span class="co">#&gt;   ..$ bioengineering                        : int 1763</span>
+<span class="co">#&gt;   ..$ bioinformatics                        : int 7045</span>
+<span class="co">#&gt;   ..$ biophysics                            : int 3366</span>
+<span class="co">#&gt;   ..$ cancer-biology                        : int 2739</span>
+<span class="co">#&gt;   ..$ cell-biology                          : int 3990</span>
 <span class="co">#&gt;   ..$ clinical-trials                       : int 91</span>
-<span class="co">#&gt;   ..$ developmental-biology                 : int 2164</span>
-<span class="co">#&gt;   ..$ ecology                               : int 2626</span>
-<span class="co">#&gt;   ..$ epidemiology                          : int 1347</span>
-<span class="co">#&gt;   ..$ evolutionary-biology                  : int 2648</span>
-<span class="co">#&gt;   ..$ genetics                              : int 2033</span>
-<span class="co">#&gt;   ..$ genomics                              : int 2875</span>
-<span class="co">#&gt;   ..$ immunology                            : int 1790</span>
-<span class="co">#&gt;   ..$ microbiology                          : int 4948</span>
-<span class="co">#&gt;   ..$ molecular-biology                     : int 1802</span>
-<span class="co">#&gt;   ..$ neuroscience                          : int 10162</span>
-<span class="co">#&gt;   ..$ paleontology                          : int 98</span>
-<span class="co">#&gt;   ..$ pathology                             : int 382</span>
-<span class="co">#&gt;   ..$ pharmacology-and-toxicology           : int 653</span>
-<span class="co">#&gt;   ..$ physiology                            : int 929</span>
-<span class="co">#&gt;   ..$ plant-biology                         : int 1492</span>
-<span class="co">#&gt;   ..$ scientific-communication-and-education: int 469</span>
-<span class="co">#&gt;   ..$ synthetic-biology                     : int 682</span>
-<span class="co">#&gt;   ..$ systems-biology                       : int 1307</span>
-<span class="co">#&gt;   ..$ zoology                               : int 377</span>
-<span class="co">#&gt;   ..$ null                                  : int 22</span>
+<span class="co">#&gt;   ..$ developmental-biology                 : int 2373</span>
+<span class="co">#&gt;   ..$ ecology                               : int 3470</span>
+<span class="co">#&gt;   ..$ epidemiology                          : int 1467</span>
+<span class="co">#&gt;   ..$ evolutionary-biology                  : int 3934</span>
+<span class="co">#&gt;   ..$ genetics                              : int 3304</span>
+<span class="co">#&gt;   ..$ genomics                              : int 4163</span>
+<span class="co">#&gt;   ..$ immunology                            : int 2277</span>
+<span class="co">#&gt;   ..$ microbiology                          : int 6485</span>
+<span class="co">#&gt;   ..$ molecular-biology                     : int 2672</span>
+<span class="co">#&gt;   ..$ neuroscience                          : int 13237</span>
+<span class="co">#&gt;   ..$ paleontology                          : int 108</span>
+<span class="co">#&gt;   ..$ pathology                             : int 440</span>
+<span class="co">#&gt;   ..$ pharmacology-and-toxicology           : int 746</span>
+<span class="co">#&gt;   ..$ physiology                            : int 1077</span>
+<span class="co">#&gt;   ..$ plant-biology                         : int 2429</span>
+<span class="co">#&gt;   ..$ scientific-communication-and-education: int 526</span>
+<span class="co">#&gt;   ..$ synthetic-biology                     : int 747</span>
+<span class="co">#&gt;   ..$ systems-biology                       : int 2074</span>
+<span class="co">#&gt;   ..$ zoology                               : int 425</span>
+<span class="co">#&gt;   ..$ null                                  : int 29</span>
 <span class="co">#&gt;  $ missing_authors  : int 63</span>
 <span class="co">#&gt;  $ missing_category : int 50</span>
 <span class="co">#&gt;  $ authors_no_papers: int 23</span></pre></body></html></div>

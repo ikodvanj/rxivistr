@@ -22,8 +22,9 @@ client for rxivist API and can be used to access:
   - Information about authors of the aforementioned articles
   - Usage statistics (e.g. number of downloads for specific paper)
 
-For more information about the Rxivist project, please visit Rxivist
-webiste (<https://rxivist.org/>) or read the following articles:
+Rxivist project is independent of biorxiv. For more information about
+Rxivist, please visit Rxivist website (<https://rxivist.org/>) or read
+the following articles:
 
   - Tracking the popularity and outcomes of all bioRxiv preprints.
     eLife. doi: 10.7554/eLife.45133.
@@ -56,4 +57,5 @@ Use one of the following functions:
   - `rxivist_stats` - retrieves basic statistics about the number of
     articles indexed by rxivist.
 
-The use of this package is explained in detail in the vignette.
+The use of this package is explained in detail in the vignette and the
+rxivist API documentation can be found at <https://rxivist.org/docs>.

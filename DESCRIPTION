@@ -1,7 +1,7 @@
 Package: rxivistr
 Type: Package
-Title: Tool for the 'rxivist' API
-Version: 0.1.0
+Title: Tool for the 'Rxivist' API
+Version: 0.1.1
 Authors@R: 
   c(person(given = "Ivan",
            family = "Kodvanj",
@@ -9,9 +9,10 @@ Authors@R:
            email = "ikodvanj@gmail.com",
            comment = c(ORCID = "0000-0002-1359-3701")))
 Maintainer: Ivan Kodvanj <ikodvanj@gmail.com> 
-Description: R client for accessing rxivist API. Rxivist indexes articles from bioRxiv, 
+Description: R client for accessing Rxivist API. Rxivist indexes articles from bioRxiv, 
   a free online archive for unpublished preprints in biology and life sciences, 
-  by Cold Spring Harbor Laboratory. 
+  by Cold Spring Harbor Laboratory. With this tool information about articles and
+  authors can be accessed. 
 Depends:
   R (>= 3.5.0)
 License: GPL-3

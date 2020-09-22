@@ -27,7 +27,7 @@ rxivist_search(
 Returns a data frame with articles matching specified search criteria.
 }
 \description{
-Retrieves a articles with matching description
+Retrieves a articles with matching description.
 }
 \examples{
 rxivist_search(search_phrase = "T-cells", from = "alltime", sortby = "twitter", limit = 5)

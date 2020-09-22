@@ -2,7 +2,7 @@
 % Please edit documentation in R/rxivistr.R
 \name{category_list}
 \alias{category_list}
-\title{Category_list}
+\title{Category list}
 \usage{
 category_list()
 }

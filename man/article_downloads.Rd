@@ -2,7 +2,7 @@
 % Please edit documentation in R/rxivistr.R
 \name{article_downloads}
 \alias{article_downloads}
-\title{article_downloads}
+\title{Article downloads}
 \usage{
 article_downloads(ID)
 }
