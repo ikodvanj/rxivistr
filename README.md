@@ -58,4 +58,8 @@ Use one of the following functions:
     articles indexed by the Rxivist.
 
 The use of this package is explained in detail in the vignette and the
+<<<<<<< HEAD
 Rxivist API documentation can be found at <https://rxivist.org/docs>.
+=======
+rxivist API documentation can be found at <https://rxivist.org/docs>.
+>>>>>>> f2f7f920854f29350160437404ab94816dd0d904
