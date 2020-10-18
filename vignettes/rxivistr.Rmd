@@ -22,7 +22,14 @@ Rxivist indexes articles from bioRxiv, a free preprint server by Cold Spring Har
 
 ## Installation 
 
-To install rxivistr package, run:
+To install rxivistr package from CRAN, run:
+
+```
+install.packages("rxivistr")
+```
+
+...or install it from GitHub:
+
 
 ```
 devtools::install_github("ikodvanj/rxivistr")

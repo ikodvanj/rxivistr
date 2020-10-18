@@ -70,7 +70,7 @@
 
       
 
-      </header><div class="row">
+      </header><script src="rxivistr_files/header-attrs-2.2/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>rxivistr</h1>
@@ -92,14 +92,16 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>To install rxivistr package, run:</p>
+<p>To install rxivistr package from CRAN, run:</p>
+<pre><code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages("rxivistr")</a></code></pre>
+<p>…or install it from GitHub:</p>
 <pre><code><a href="https://devtools.r-lib.org//reference/remote-reexports.html">devtools::install_github("ikodvanj/rxivistr")</a></code></pre>
 </div>
 <div id="using-rxivistr" class="section level2">
 <h2 class="hasAnchor">
 <a href="#using-rxivistr" class="anchor"></a>Using rxivistr</h2>
 <p>Load the package using <code>library()</code> function.</p>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">rxivistr</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">rxivistr</span>)</pre></body></html></div>
 <p>Package contains following functions:</p>
 <ul>
 <li>
@@ -122,7 +124,7 @@
 <h3 class="hasAnchor">
 <a href="#rxivist_search" class="anchor"></a>rxivist_search</h3>
 <p>Following function retrieves articles top 5 most downloaded articles related to COVID-19:</p>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="no">res</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/rxivist_search.html">rxivist_search</a></span>(<span class="kw">search_phrase</span> <span class="kw">=</span> <span class="st">"COVID-19"</span>, <span class="kw">from</span> <span class="kw">=</span> <span class="st">"alltime"</span>, <span class="kw">sortby</span> <span class="kw">=</span> <span class="st">"downloads"</span>, <span class="kw">limit</span> <span class="kw">=</span> <span class="fl">5</span>)
+<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">res</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/rxivist_search.html">rxivist_search</a></span>(<span class="kw">search_phrase</span> <span class="kw">=</span> <span class="st">"COVID-19"</span>, <span class="kw">from</span> <span class="kw">=</span> <span class="st">"alltime"</span>, <span class="kw">sortby</span> <span class="kw">=</span> <span class="st">"downloads"</span>, <span class="kw">limit</span> <span class="kw">=</span> <span class="fl">5</span>)
 <span class="kw pkg">dplyr</span><span class="kw ns">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/reexports.html">glimpse</a></span>(<span class="no">res</span>)
 <span class="co">#&gt; Rows: 5</span>
 <span class="co">#&gt; Columns: 10</span>
@@ -141,7 +143,7 @@
 <h3 class="hasAnchor">
 <a href="#article_details" class="anchor"></a>article_details</h3>
 <p>At the time of writing this vignette, the most downloaded article had an id 72514. With the following function we will retrieve information about this article:</p>
-<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">res</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/article_details.html">article_details</a></span>(<span class="fl">72514</span>)
+<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">res</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/article_details.html">article_details</a></span>(<span class="fl">72514</span>)
 <span class="kw pkg">dplyr</span><span class="kw ns">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/reexports.html">glimpse</a></span>(<span class="no">res</span>)
 <span class="co">#&gt; List of 11</span>
 <span class="co">#&gt;  $ id          : chr "72514"</span>
@@ -155,23 +157,23 @@
 <span class="co">#&gt;  $ authors     :'data.frame':    9 obs. of  4 variables:</span>
 <span class="co">#&gt;   ..$ id         : int [1:9] 580441 580442 580443 580444 580445 582554 295517 580447 580448</span>
 <span class="co">#&gt;   ..$ name       : chr [1:9] "Prashant Pradhan" "Ashutosh Kumar Pandey" "Akhilesh Mishra" "Parul Gupta" ...</span>
-<span class="co">#&gt;   ..$ institution: chr [1:9] "Indian Institute of Technology Delhi" "Indian Institute of Technology Delhi" "Indian Institute of Technology, New Delhi" "Indian Institute of Technology Delhi" ...</span>
-<span class="co">#&gt;   ..$ orcid      : logi [1:9] NA NA NA NA NA NA ...</span>
+<span class="co">#&gt;   ..$ institution: chr [1:9] "Acharya Narendra Dev College, University of Delhi" "Kusuma School of biological sciences, Indian institute of technology" "Kusuma School of biological sciences, Indian institute of technology" "Kusuma School of biological sciences, Indian institute of technology" ...</span>
+<span class="co">#&gt;   ..$ orcid      : chr [1:9] NA NA NA "http://orcid.org/0000-0002-0190-8753" ...</span>
 <span class="co">#&gt;  $ ranks       :List of 4</span>
 <span class="co">#&gt;   ..$ alltime  :List of 4</span>
 <span class="co">#&gt;   .. ..$ downloads: int 962296</span>
 <span class="co">#&gt;   .. ..$ rank     : int 1</span>
-<span class="co">#&gt;   .. ..$ out_of   : int 94912</span>
+<span class="co">#&gt;   .. ..$ out_of   : int 99794</span>
 <span class="co">#&gt;   .. ..$ tie      : logi FALSE</span>
 <span class="co">#&gt;   ..$ ytd      :List of 4</span>
 <span class="co">#&gt;   .. ..$ downloads: int 962296</span>
 <span class="co">#&gt;   .. ..$ rank     : int 1</span>
-<span class="co">#&gt;   .. ..$ out_of   : int 94912</span>
+<span class="co">#&gt;   .. ..$ out_of   : int 99794</span>
 <span class="co">#&gt;   .. ..$ tie      : logi FALSE</span>
 <span class="co">#&gt;   ..$ lastmonth:List of 4</span>
 <span class="co">#&gt;   .. ..$ downloads: int 14987</span>
 <span class="co">#&gt;   .. ..$ rank     : int 3</span>
-<span class="co">#&gt;   .. ..$ out_of   : int 94912</span>
+<span class="co">#&gt;   .. ..$ out_of   : int 99794</span>
 <span class="co">#&gt;   .. ..$ tie      : logi FALSE</span>
 <span class="co">#&gt;   ..$ category :List of 4</span>
 <span class="co">#&gt;   .. ..$ downloads: int 962296</span>
@@ -184,7 +186,7 @@
 <h3 class="hasAnchor">
 <a href="#article_downloads" class="anchor"></a>article_downloads</h3>
 <p>To investigate the number of downloads, <code>article_downloads</code> function can be used:</p>
-<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="fu"><a href="../reference/article_downloads.html">article_downloads</a></span>(<span class="fl">72514</span>)
+<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="fu"><a href="../reference/article_downloads.html">article_downloads</a></span>(<span class="fl">72514</span>)
 <span class="co">#&gt;   month year downloads  views</span>
 <span class="co">#&gt; 1     1 2020    564379  93404</span>
 <span class="co">#&gt; 2     2 2020     96925 105222</span>
@@ -199,12 +201,12 @@
 <h3 class="hasAnchor">
 <a href="#authors_rank" class="anchor"></a>authors_rank</h3>
 <p>To retrieve top 200 authors based on the number of article downloads, authors_rank can be used:</p>
-<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">res</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/authors_rank.html">authors_rank</a></span>()
+<div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="no">res</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/authors_rank.html">authors_rank</a></span>()
 <span class="kw pkg">dplyr</span><span class="kw ns">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/reexports.html">glimpse</a></span>(<span class="no">res</span>)
 <span class="co">#&gt; Rows: 200</span>
 <span class="co">#&gt; Columns: 5</span>
-<span class="co">#&gt; $ id        &lt;int&gt; 295517, 580448, 580443, 580441, 580444, 580447, 580442, 582…</span>
-<span class="co">#&gt; $ name      &lt;chr&gt; "James Gomes", "Bishwajit Kundu", "Akhilesh Mishra", "Prash…</span>
+<span class="co">#&gt; $ id        &lt;int&gt; 295517, 580448, 580441, 580442, 580443, 580444, 580447, 582…</span>
+<span class="co">#&gt; $ name      &lt;chr&gt; "James Gomes", "Bishwajit Kundu", "Prashant Pradhan", "Ashu…</span>
 <span class="co">#&gt; $ rank      &lt;int&gt; 1, 2, 2, 2, 2, 2, 2, 8, 8, 10, 11, 12, 13, 14, 15, 16, 17, …</span>
 <span class="co">#&gt; $ downloads &lt;int&gt; 963907, 963589, 963589, 963589, 963589, 963589, 963589, 962…</span>
 <span class="co">#&gt; $ tie       &lt;lgl&gt; FALSE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, FALS…</span></pre></body></html></div>
@@ -213,7 +215,7 @@
 <h3 class="hasAnchor">
 <a href="#author" class="anchor"></a>author</h3>
 <p>With function author, we can retrieve more information about specific author.</p>
-<div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="fu"><a href="../reference/author.html">author</a></span>(<span class="fl">295517</span>)
+<div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="fu"><a href="../reference/author.html">author</a></span>(<span class="fl">295517</span>)
 <span class="co">#&gt; $id</span>
 <span class="co">#&gt; [1] 295517</span>
 <span class="co">#&gt; </span>
@@ -221,7 +223,7 @@
 <span class="co">#&gt; [1] "James Gomes"</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $institution</span>
-<span class="co">#&gt; [1] "Indian Institute of Technology Delhi"</span>
+<span class="co">#&gt; [1] "Kusuma School of biological sciences, Indian institute of technology"</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $orcid</span>
 <span class="co">#&gt; NULL</span>
@@ -251,17 +253,17 @@
 <span class="co">#&gt; 2             genomics                    1293               8032</span>
 <span class="co">#&gt; 3      systems-biology                     318              53888</span>
 <span class="co">#&gt;   ranks.alltime.out_of ranks.alltime.tie ranks.ytd.downloads ranks.ytd.rank</span>
-<span class="co">#&gt; 1                94912             FALSE              962296              1</span>
-<span class="co">#&gt; 2                94912             FALSE                1293           1304</span>
-<span class="co">#&gt; 3                94912             FALSE                  55          81139</span>
+<span class="co">#&gt; 1                99794             FALSE              962296              1</span>
+<span class="co">#&gt; 2                99794             FALSE                1293           1304</span>
+<span class="co">#&gt; 3                99794             FALSE                  55          81139</span>
 <span class="co">#&gt;   ranks.ytd.out_of ranks.ytd.tie ranks.lastmonth.downloads ranks.lastmonth.rank</span>
-<span class="co">#&gt; 1            94912         FALSE                     14987                    3</span>
-<span class="co">#&gt; 2            94912         FALSE                       419                  784</span>
-<span class="co">#&gt; 3            94912         FALSE                         8                76347</span>
+<span class="co">#&gt; 1            99794         FALSE                     14987                    3</span>
+<span class="co">#&gt; 2            99794         FALSE                       419                  784</span>
+<span class="co">#&gt; 3            99794         FALSE                         8                76347</span>
 <span class="co">#&gt;   ranks.lastmonth.out_of ranks.lastmonth.tie ranks.category.downloads</span>
-<span class="co">#&gt; 1                  94912               FALSE                   962296</span>
-<span class="co">#&gt; 2                  94912               FALSE                     1293</span>
-<span class="co">#&gt; 3                  94912               FALSE                      318</span>
+<span class="co">#&gt; 1                  99794               FALSE                   962296</span>
+<span class="co">#&gt; 2                  99794               FALSE                     1293</span>
+<span class="co">#&gt; 3                  99794               FALSE                      318</span>
 <span class="co">#&gt;   ranks.category.rank ranks.category.out_of ranks.category.tie</span>
 <span class="co">#&gt; 1                   1                  5736              FALSE</span>
 <span class="co">#&gt; 2                1216                  5955              FALSE</span>
@@ -269,7 +271,7 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $ranks</span>
 <span class="co">#&gt;   downloads  rank out_of   tie             category</span>
-<span class="co">#&gt; 1    963907     1 404161 FALSE              alltime</span>
+<span class="co">#&gt; 1    963907     1 422246 FALSE              alltime</span>
 <span class="co">#&gt; 2    962296     1  20691  TRUE evolutionary-biology</span>
 <span class="co">#&gt; 3      1293 14583  42763  TRUE             genomics</span>
 <span class="co">#&gt; 4       318  8777  11761  TRUE      systems-biology</span></pre></body></html></div>
@@ -278,7 +280,7 @@
 <h3 class="hasAnchor">
 <a href="#category_list" class="anchor"></a>category_list</h3>
 <p>This function returns a list of all categories to which articles are classified:</p>
-<div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="fu"><a href="../reference/category_list.html">category_list</a></span>()
+<div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="fu"><a href="../reference/category_list.html">category_list</a></span>()
 <span class="co">#&gt; $results</span>
 <span class="co">#&gt;  [1] "animal-behavior-and-cognition"         </span>
 <span class="co">#&gt;  [2] "biochemistry"                          </span>
@@ -312,76 +314,45 @@
 <h3 class="hasAnchor">
 <a href="#rxivist_stats" class="anchor"></a>rxivist_stats</h3>
 <p>Returns information about the number of articles indexed by the Rxivist.</p>
-<div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="no">res</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/rxivist_stats.html">rxivist_stats</a></span>()
+<div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="no">res</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/rxivist_stats.html">rxivist_stats</a></span>()
 <span class="kw pkg">dplyr</span><span class="kw ns">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/reexports.html">glimpse</a></span>(<span class="no">res</span>)
 <span class="co">#&gt; List of 8</span>
-<span class="co">#&gt;  $ papers_indexed   : int 94912</span>
-<span class="co">#&gt;  $ authors_indexed  : int 404161</span>
+<span class="co">#&gt;  $ papers_indexed   : int 99794</span>
+<span class="co">#&gt;  $ authors_indexed  : int 422246</span>
 <span class="co">#&gt;  $ missing_abstract : int 1</span>
 <span class="co">#&gt;  $ missing_date     : int 0</span>
 <span class="co">#&gt;  $ outdated_count   :List of 28</span>
-<<<<<<< HEAD
-<span class="co">#&gt;   ..$ animal-behavior-and-cognition         : int 1273</span>
-<span class="co">#&gt;   ..$ biochemistry                          : int 2741</span>
-<span class="co">#&gt;   ..$ bioengineering                        : int 1839</span>
-<span class="co">#&gt;   ..$ bioinformatics                        : int 7549</span>
-<span class="co">#&gt;   ..$ biophysics                            : int 3494</span>
-<span class="co">#&gt;   ..$ cancer-biology                        : int 2856</span>
-<span class="co">#&gt;   ..$ cell-biology                          : int 4234</span>
-<span class="co">#&gt;   ..$ clinical-trials                       : int 91</span>
-<span class="co">#&gt;   ..$ developmental-biology                 : int 2457</span>
-<span class="co">#&gt;   ..$ ecology                               : int 3605</span>
-<span class="co">#&gt;   ..$ epidemiology                          : int 1467</span>
-<span class="co">#&gt;   ..$ evolutionary-biology                  : int 4439</span>
-<span class="co">#&gt;   ..$ genetics                              : int 3804</span>
-<span class="co">#&gt;   ..$ genomics                              : int 4669</span>
-<span class="co">#&gt;   ..$ immunology                            : int 2375</span>
-<span class="co">#&gt;   ..$ microbiology                          : int 6992</span>
-<span class="co">#&gt;   ..$ molecular-biology                     : int 2812</span>
-<span class="co">#&gt;   ..$ neuroscience                          : int 14248</span>
-<span class="co">#&gt;   ..$ paleontology                          : int 109</span>
-<span class="co">#&gt;   ..$ pathology                             : int 458</span>
-<span class="co">#&gt;   ..$ pharmacology-and-toxicology           : int 773</span>
-<span class="co">#&gt;   ..$ physiology                            : int 1123</span>
-<span class="co">#&gt;   ..$ plant-biology                         : int 2517</span>
-<span class="co">#&gt;   ..$ scientific-communication-and-education: int 547</span>
-<span class="co">#&gt;   ..$ synthetic-biology                     : int 768</span>
-<span class="co">#&gt;   ..$ systems-biology                       : int 2133</span>
-<span class="co">#&gt;   ..$ zoology                               : int 444</span>
-<span class="co">#&gt;   ..$ null                                  : int 36</span>
-=======
-<span class="co">#&gt;   ..$ animal-behavior-and-cognition         : int 1236</span>
-<span class="co">#&gt;   ..$ biochemistry                          : int 2626</span>
-<span class="co">#&gt;   ..$ bioengineering                        : int 1763</span>
-<span class="co">#&gt;   ..$ bioinformatics                        : int 7045</span>
-<span class="co">#&gt;   ..$ biophysics                            : int 3366</span>
-<span class="co">#&gt;   ..$ cancer-biology                        : int 2739</span>
-<span class="co">#&gt;   ..$ cell-biology                          : int 3990</span>
-<span class="co">#&gt;   ..$ clinical-trials                       : int 91</span>
-<span class="co">#&gt;   ..$ developmental-biology                 : int 2373</span>
-<span class="co">#&gt;   ..$ ecology                               : int 3470</span>
-<span class="co">#&gt;   ..$ epidemiology                          : int 1467</span>
-<span class="co">#&gt;   ..$ evolutionary-biology                  : int 3934</span>
-<span class="co">#&gt;   ..$ genetics                              : int 3304</span>
-<span class="co">#&gt;   ..$ genomics                              : int 4163</span>
-<span class="co">#&gt;   ..$ immunology                            : int 2277</span>
-<span class="co">#&gt;   ..$ microbiology                          : int 6485</span>
-<span class="co">#&gt;   ..$ molecular-biology                     : int 2672</span>
-<span class="co">#&gt;   ..$ neuroscience                          : int 13237</span>
-<span class="co">#&gt;   ..$ paleontology                          : int 108</span>
-<span class="co">#&gt;   ..$ pathology                             : int 440</span>
-<span class="co">#&gt;   ..$ pharmacology-and-toxicology           : int 746</span>
-<span class="co">#&gt;   ..$ physiology                            : int 1077</span>
-<span class="co">#&gt;   ..$ plant-biology                         : int 2429</span>
-<span class="co">#&gt;   ..$ scientific-communication-and-education: int 526</span>
-<span class="co">#&gt;   ..$ synthetic-biology                     : int 747</span>
-<span class="co">#&gt;   ..$ systems-biology                       : int 2074</span>
-<span class="co">#&gt;   ..$ zoology                               : int 425</span>
-<span class="co">#&gt;   ..$ null                                  : int 29</span>
->>>>>>> f2f7f920854f29350160437404ab94816dd0d904
+<span class="co">#&gt;   ..$ animal-behavior-and-cognition         : int 1436</span>
+<span class="co">#&gt;   ..$ biochemistry                          : int 3132</span>
+<span class="co">#&gt;   ..$ bioengineering                        : int 2086</span>
+<span class="co">#&gt;   ..$ bioinformatics                        : int 8553</span>
+<span class="co">#&gt;   ..$ biophysics                            : int 4021</span>
+<span class="co">#&gt;   ..$ cancer-biology                        : int 3287</span>
+<span class="co">#&gt;   ..$ cell-biology                          : int 4769</span>
+<span class="co">#&gt;   ..$ clinical-trials                       : int 99</span>
+<span class="co">#&gt;   ..$ developmental-biology                 : int 2741</span>
+<span class="co">#&gt;   ..$ ecology                               : int 4036</span>
+<span class="co">#&gt;   ..$ epidemiology                          : int 1554</span>
+<span class="co">#&gt;   ..$ evolutionary-biology                  : int 5552</span>
+<span class="co">#&gt;   ..$ genetics                              : int 4718</span>
+<span class="co">#&gt;   ..$ genomics                              : int 5821</span>
+<span class="co">#&gt;   ..$ immunology                            : int 2775</span>
+<span class="co">#&gt;   ..$ microbiology                          : int 8102</span>
+<span class="co">#&gt;   ..$ molecular-biology                     : int 3172</span>
+<span class="co">#&gt;   ..$ neuroscience                          : int 16230</span>
+<span class="co">#&gt;   ..$ paleontology                          : int 125</span>
+<span class="co">#&gt;   ..$ pathology                             : int 536</span>
+<span class="co">#&gt;   ..$ pharmacology-and-toxicology           : int 879</span>
+<span class="co">#&gt;   ..$ physiology                            : int 1287</span>
+<span class="co">#&gt;   ..$ plant-biology                         : int 2863</span>
+<span class="co">#&gt;   ..$ scientific-communication-and-education: int 627</span>
+<span class="co">#&gt;   ..$ synthetic-biology                     : int 872</span>
+<span class="co">#&gt;   ..$ systems-biology                       : int 2365</span>
+<span class="co">#&gt;   ..$ zoology                               : int 486</span>
+<span class="co">#&gt;   ..$ null                                  : int 49</span>
 <span class="co">#&gt;  $ missing_authors  : int 63</span>
-<span class="co">#&gt;  $ missing_category : int 50</span>
-<span class="co">#&gt;  $ authors_no_papers: int 23</span></pre></body></html></div>
+<span class="co">#&gt;  $ missing_category : int 4932</span>
+<span class="co">#&gt;  $ authors_no_papers: int 420</span></pre></body></html></div>
 </div>
 </div>
   </div>

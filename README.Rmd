@@ -18,6 +18,7 @@ knitr::opts_chunk$set(
 [![Travis build status](https://travis-ci.com/ikodvanj/rxivistr.svg?branch=master)](https://travis-ci.com/ikodvanj/rxivistr)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/ikodvanj/rxivistr?branch=master&svg=true)](https://ci.appveyor.com/project/ikodvanj/rxivistr)
 [![Codecov test coverage](https://codecov.io/gh/ikodvanj/rxivistr/branch/master/graph/badge.svg)](https://codecov.io/gh/ikodvanj/rxivistr?branch=master)
+[![CRAN status](https://www.r-pkg.org/badges/version/rxivistr)](https://CRAN.R-project.org/package=rxivistr)
 <!-- badges: end -->
 
 ## rxivistr
@@ -37,6 +38,12 @@ Rxivist project is independent of biorxiv. For more information about Rxivist, p
 ## Installation 
 
 To install rxivistr package, run:
+
+```
+install.packages("rxivistr")
+```
+
+...or...
 
 ```
 devtools::install_github("ikodvanj/rxivistr")

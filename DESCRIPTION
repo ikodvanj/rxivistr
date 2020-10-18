@@ -9,10 +9,9 @@ Authors@R:
            email = "ikodvanj@gmail.com",
            comment = c(ORCID = "0000-0002-1359-3701")))
 Maintainer: Ivan Kodvanj <ikodvanj@gmail.com> 
-Description: R client for accessing Rxivist API. Rxivist indexes articles from bioRxiv, 
-  a free online archive for unpublished preprints in biology and life sciences, 
-  by Cold Spring Harbor Laboratory. With this tool information about articles and
-  authors can be accessed. 
+Description: Client for Rxivist API <https://rxivist.org/docs>, used for accessing information about preprints 
+  and their authors. Rxivist indexes preprints from bioRxiv, a free online archive
+  for preprints in biology and life sciences, by Cold Spring Harbor Laboratory. 
 Depends:
   R (>= 3.5.0)
 License: GPL-3
